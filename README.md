@@ -1,0 +1,1 @@
+# EquipGroup-test-task
