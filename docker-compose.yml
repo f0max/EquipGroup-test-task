@@ -22,7 +22,7 @@ services:
       - app
 
   database:
-    image: postgres:17
+    image: docker/postgres/Dockerfile
     container_name: database
     environment:
       POSTGRES_DB: laravel-db

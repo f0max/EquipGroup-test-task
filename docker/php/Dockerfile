@@ -10,4 +10,5 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www
 
-RUN chown -R www-data:www-data /var/www
+RUN chown -R www-data:www-data /var/www && \
+    chmod -R o+rwx /var/www
