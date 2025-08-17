@@ -10,6 +10,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www
 
-COPY php/init.sh /usr/local/bin/init.sh
+COPY docker/php/init.sh /usr/local/bin/init.sh
 
 CMD ["bash", "-c", "/usr/local/bin/init.sh"]
