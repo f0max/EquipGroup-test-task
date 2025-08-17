@@ -22,7 +22,9 @@ services:
       - app
 
   database:
-    image: docker/postgres/Dockerfile
+    build:
+      context: .
+      dockerfile: docker/postgres/Dockerfile
     container_name: database
     environment:
       POSTGRES_DB: laravel-db
