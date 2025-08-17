@@ -10,8 +10,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www
 
-COPY docker/php/init.sh /usr/local/bin/init.sh
-RUN chmod o+x /usr/local/bin/init.sh && \
-    /usr/local/bin/init.sh
+COPY docker/php/init.sh ./init.sh
 
-CMD ["php-fpm"]
+RUN chmod o+x init.sh
