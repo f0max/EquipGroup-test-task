@@ -10,5 +10,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www
 
-RUN chown -R www-data:www-data /var/www && \
-    chmod -R o+rwx /var/www
+COPY php/init.sh /usr/local/bin/init.sh
+
+CMD ["bash", "-c", "/usr/local/bin/init.sh"]
